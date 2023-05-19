@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/taj.css" rel="stylesheet">
+    <link href="css/section.css" rel="stylesheet">
     <title>H&k-Morocco</title>
 
 </head>
@@ -125,12 +125,12 @@
     while ($product = $res->fetch_assoc()) {
         echo "
         <div class='col-md-3 singleprod'>
-          <div class='card border-0' style='margin-right: 10px;'>
-            <img class='card-img-top' src='" . $product['image'] . "' alt='" . $product['description'] . "'>
+          <div class='card border-0' style='margin-right: 1px;  '>
+            <img class='card-img-top ' style='height: 300px'; src='" . $product['image'] . "' alt='" . $product['description'] . "'>
             <div class='card-body'>
-              <h5 class='card-title'>" . $product['description'] . "</h5>
-              <p class='card-text'>" . $product['category'] . "</p>
-              <p class='card-price'>"  . $product['price'] ."DH </p>
+              <h5 class='card-title text-center'>" . $product['description'] . "</h5>
+              <p class='card-text text-center'>" . $product['category'] . "</p>
+              <b><p class='card-price'>"  . $product['price'] ."DH </p></b>
               <a href='product.php?id=" . $product['id'] . "'>
               <button type='button' class='viewprod'>
                View Product
