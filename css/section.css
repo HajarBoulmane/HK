@@ -1,5 +1,5 @@
 .navbar {
-  background-color: transparent !important;
+  background-color: white !important;
   position: fixed;
   top: 0;
   width: 100%;
@@ -64,3 +64,14 @@ margin-left:450px;
     border: 1px solid black;
     background-color: transparent;
   }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('images/banner2.jpg');
+}
+

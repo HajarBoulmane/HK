@@ -114,43 +114,6 @@
         <img src="images/banner3.png" alt="banner">
     </div>
 
-    <div class='container products'>
-    <div class='row'>
-        <?php
-    require('connection.php');
-    $gender = $_GET['gender'];
-    $category = $_GET['category'];
-    $req = "SELECT * FROM produit WHERE gender='$gender' AND category='$category'";
-    $res = $con->query($req);
-    while ($product = $res->fetch_assoc()) {
-        echo "
-        <div class='col-md-3 singleprod'>
-          <div class='card border-0' style='margin-right: 10px;'>
-            <img class='card-img-top' src='" . $product['image'] . "' alt='" . $product['description'] . "'>
-            <div class='card-body'>
-              <h5 class='card-title'>" . $product['description'] . "</h5>
-              <p class='card-text'>" . $product['category'] . "</p>
-              <p class='card-price'>"  . $product['price'] ."DH </p>
-              <a href='product.php?id=" . $product['id'] . "'>
-              <button type='button' class='viewprod'>
-               View Product
-              <div id='container-stars'>
-              <div id='stars'></div>
-              </div>
-              <div id='glow'>
-              <div class='circle'></div>
-              </div>
-  </button>
-</a>
-
-            </div>
-          </div>
-        </div>";
-    }
-    ?>
-    </div>
-</div>
-</div>
 <footer>
     <div class="container p-4 ">
         <div class="row">
