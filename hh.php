@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/product2.css" rel="stylesheet">
+    <link href="css/p3.css" rel="stylesheet">
     <title>H&k-Morocco</title>
 
 </head>
@@ -109,41 +109,7 @@
         </ul>
     </div>
 </nav>
-<div class='container products'>
-        <div class='row'>
-            <?php
-    require('connection.php');
-    $gender = $_GET['gender'];
-    $category = $_GET['category'];
-    $req = "SELECT * FROM produit WHERE gender='$gender' AND category='$category'";
-    $res = $con->query($req);
-    while ($product = $res->fetch_assoc()) {
-        echo "
-        <div class='col col-md-3'>
-          <div class='card' style='margin-right: 10px;'>
-            <img class='card-img-top' src='" . $product['image'] . "' alt='" . $product['description'] . "'>
-            <div class='card-body'>
-              <h5 class='card-title'>" . $product['description'] . "</h5>
-              <p class='card-text'>" . $product['category'] . "</p>
-              <p class='card-price'>"  . $product['price'] ."DH </p>
-              <a href='product.php?id=" . $product['id'] . "'>
-              <button type='button' class='button'>
-              <strong>View Product</strong>
-              <div id='container-stars'>
-              <div id='stars'></div>
-              </div>
-              <div id='glow'>
-              <div class='circle'></div>
-              <div class='circle'></div>
-              </div>
-  </button>
-</a>
 
-            </div>
-          </div>
-        </div>";
-    }
-    ?>
         </div>
     </div>
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">

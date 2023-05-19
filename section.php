@@ -23,7 +23,7 @@
 
 
 <div class="offcanvas offcanvas-start" id="demo">
-    <div class="offcanvas-header nav">
+    <div class="offcanvas-header">
         <h1 class="offcanvas-title">
             <a class="navbar-brand" href="index.php">
                 <img src="images/logo.png" alt="logo" width="100px" height="30px">
@@ -109,9 +109,10 @@
         </ul>
     </div>
 </nav>
+
 <div class='container products'>
-        <div class='row'>
-            <?php
+    <div class='row'>
+        <?php
     require('connection.php');
     $gender = $_GET['gender'];
     $category = $_GET['category'];
@@ -119,8 +120,8 @@
     $res = $con->query($req);
     while ($product = $res->fetch_assoc()) {
         echo "
-        <div class='col col-md-3'>
-          <div class='card' style='margin-right: 10px;'>
+        <div class='col-md-3 singleprod'>
+          <div class='card border-0' style='margin-right: 10px;'>
             <img class='card-img-top' src='" . $product['image'] . "' alt='" . $product['description'] . "'>
             <div class='card-body'>
               <h5 class='card-title'>" . $product['description'] . "</h5>
@@ -144,20 +145,25 @@
         </div>";
     }
     ?>
+    </div>
+</div>
+</div>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/imag2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="images/imag3.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="images/imag4.jpg" class="d-block w-100" alt="...">
         </div>
     </div>
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/imag2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/imag3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/imag4.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
+</div>
+
+
 <footer>
     <div class="container p-4 ">
         <div class="row">
@@ -178,7 +184,7 @@
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h4>Contact</h4>
                 <br>
-                <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
+
                 <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
                 <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
             </div>
