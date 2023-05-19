@@ -128,13 +128,12 @@
               <p class='card-text'>" . $product['category'] . "</p>
               <p class='card-price'>"  . $product['price'] ."DH </p>
               <a href='product.php?id=" . $product['id'] . "'>
-              <button type='button' class='button'>
-              <strong>View Product</strong>
+              <button type='button' class='viewprod'>
+               View Product
               <div id='container-stars'>
               <div id='stars'></div>
               </div>
               <div id='glow'>
-              <div class='circle'></div>
               <div class='circle'></div>
               </div>
   </button>
