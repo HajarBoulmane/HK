@@ -1,24 +1,3 @@
-<?php
-session_start();
-require('connection.php');
-include('code.php');
-$size=$_POST['size'];
-$quantite=$_POST['quantite'];
-$idproduit=$_SESSION['idproduit'];
-if (isset($_SESSION['idcart'])){
-    $idcart=$_SESSION['idcart'];
-    $req="insert into panier values($idcart,$idproduit,$quantite,'$size')";
-}
-else{
-    $_SESSION['idcart']=$code;
-    $idcart=$_SESSION['idcart'];
-    $req="insert into panier values($idcart,$idproduit,$quantite,'$size')";
-
-}
-
-$con->query($req);
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,87 +16,133 @@ $con->query($req);
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/section.css" rel="stylesheet">
+    <link href="css/cart.css" rel="stylesheet">
     <title>H&k-Morocco</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
+    <?php 
+        session_start();
+        ?>
+
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">
                 <a class="navbar-brand" href="index.php">
                     <img src="images/logo.png" alt="logo" width="100px" height="30px">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"><b>Home </b></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <b> Women</b>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=coats" ?>>Coats</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=jackets" ?>>Jackets</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=dresses" ?>>Dresses</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=skirts" ?>>Skirts</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=sweaters" ?>>Sweaters</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=hoodies" ?>>Hoodies</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=accessories" ?>>Accessories</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=women&category=shoes" ?>>Shoes</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <b> Men </b>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=blazers" ?>>Blazers</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=jackets" ?>>Jackets</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=accessories" ?>>Accessories</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=pants" ?>>Pants</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=shirts" ?>>Shirts</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=sweaters" ?>>Sweaters</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=hoodies" ?>>Hoodies</a></li>
-                                <li><a class="dropdown-item"
-                                        href=<?php echo "section.php?gender=men&category=shoes" ?>>Shoes</a></li>
-                            </ul>
-                        </li>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><b>About</b></a>
-                        </li>
-                    </ul>
-                </div>
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container mt-3 canvalist">
+                <ul class="list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Women
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=coats">Coats</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=jackets">Jackets</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=dresses">Dresses</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=skirts">Skirts</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=sweaters">Sweaters</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=hoodies">Hoodies</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="section.php?gender=women&category=accessories">Accessories</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=shoes">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Men
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=blazers">Blazers</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=jackets">Jackets</a></li>
+                            <li><a class="dropdown-item"
+                                    href="section.php?gender=men&category=accessories">Accessories</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=pants">Pants</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=shirts">Shirts</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=sweaters">Sweaters</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=hoodies">Hoodies</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=shoes">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <?php
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid ">
+            <ul class="navbar-nav">
+                <div class="menu">
+                    <li class="nav-item ">
+                        <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                            <i class="fas fa-bars"></i>
+                            Menu
+                        </button>
+                    </li>
+                </div>
+                <div class="logo">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">
+                            <img src="images/logo.png" alt="logo" width="100px" height="30px">
+                        </a>
+                    </li>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php"><i class="fa fa-cart-shopping"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa fa-user"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <?php
+require('connection.php');
+$req="select count(*) as nb from panier";
+$res=$con->query($req);
+$row=$res->fetch_assoc();
+$code=$row['nb']+1;
+
+$size=$_POST['size'];
+$quantite=$_POST['quantite'];
+$idproduit=$_SESSION['idproduit'];
+if (isset($_SESSION['idcart'])){
+    $idcart=$_SESSION['idcart'];
+    $req1="insert into panier values($idcart,$idproduit,$quantite,'$size')";
+}
+else{
+    $_SESSION['idcart']=$code;
+    $idcart=$_SESSION['idcart'];
+    $req1="insert into panier values($idcart,$idproduit,$quantite,'$size')";
+
+}
+
+$con->query($req1);
+
+?>
+    <?php
 $req1 = "SELECT * FROM panier WHERE id = $idcart";
 $res1 = $con->query($req1);
 
@@ -154,39 +179,37 @@ while ($row1 = $res1->fetch_assoc()) {
         </div>";
     }
 }
-
-echo "</div>";
+echo"</div>";
 ?>
-        <div class="btnvalider">
-            <a href="valider.php"><button>continue</button></a>
-        </div>
-        <footer>
-            <div class="container p-4 ">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h4>Shop</h4>
-                        <br>
-                        <p>Women</p>
-                        <p>Men</p>
-                        <p>Trend</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h4>Help</h4>
-                        <br>
-                        <p>My Account</p>
-                        <p>Product</p>
-                        <p>Payment</p>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                        <h4>Contact</h4>
-                        <br>
-                        <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
-                        <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
-                        <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
-                    </div>
+        <a href="valider.php"><button class="btnvalider">valider</button></a>
+ 
+    <footer>
+        <div class="container p-4 ">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Shop</h4>
+                    <br>
+                    <p>Women</p>
+                    <p>Men</p>
+                    <p>Trend</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Help</h4>
+                    <br>
+                    <p>My Account</p>
+                    <p>Product</p>
+                    <p>Payment</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Contact</h4>
+                    <br>
+                    <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
+                    <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
+                    <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 </body>
 
 </html>

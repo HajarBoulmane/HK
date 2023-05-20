@@ -104,7 +104,7 @@
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-cart-shopping"></i></a>
+                <a class="nav-link" href="cart.php"><i class="fa fa-cart-shopping"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fa fa-user"></i></a>
