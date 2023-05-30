@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/aboutus.css" rel="stylesheet">
     <title>H&k-Morocco</title>
 </head>
 
@@ -89,10 +89,8 @@
                         </li>
 
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="aboutus.php"> <b>About </b></a>
-                        </li>
-                        <li class="nav-item" style="color:black">
                             
                 <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
             </li>   
@@ -106,43 +104,56 @@
     <div class="image-container ">
         <img src="images/imag1.jpg" alt="fashion Image">
         <div class="image-content ">
-            <br><br>
+            <br>
+            <br>
             <p class="style-font">
-                <br>
-                Here you can find a variety
-                of stylish and comfortable clothing for men and women .
-                We are committed to providing high quality clothing
-                that is both fashionable and durable.
             </p>
-            <a href="#" class="btn">Discover Now!</a>
+            
         </div>
     </div>
 
     <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
+
                 <img src="images/imag2.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+            <div class="paragraph">
+                <p>H&K is a popular e-commerce site catering to fashion-conscious people looking for stylish clothing and accessories.
+                     H&K offers a wide range of trendy and high-quality products,
+                      providing fashion lovers with an unparalleled shopping experience.</p>
             </div>
+        </div>
+            </div>
+
             <div class="carousel-item">
                 <img src="images/imag3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block " style="color:black" font-size="20px" >
+                <div class="paragraph2">
+                    <p>At H&K, customers can browse a diverse collection of apparel including tops, bottoms, dresses, outerwear and more.
+                     The site showcases the latest fashion trends so customers can stay ahead of the curve when it comes to style. 
+                     From casual wear to formal wear,
+                     H&K is your one stop shop for all your fashion needs, with items for every occasion.</p>
+                    </div>
             </div>
             <div class="carousel-item">
                 <img src="images/imag4.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block " style="color:black" font-size="20px" >
+                <div class="paragraph3">
+                    <p>H&K places a strong emphasis on customer satisfaction and aims to provide exceptional service
+                    . They offer various convenient features, such as secure online payments,
+                     flexible return policies, and efficient shipping options,
+                      ensuring a seamless and enjoyable shopping experience. 
+                      Additionally, H&K provides personalized recommendations based on customers' preferences
+                       and browsing history, making it easier for them to discover 
+                       new and exciting fashion choices.</p>
             </div>
+
+            </div>
+        </div>
         </div>
 
 
-
-            <form action="signup.php">
-        <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div class="text-center">
-                <h1><b>Welcome to H&K</b></h1>
-                <p><b>For a new lifestyle</b></p>
-                <button class="btn" >Sign up</button>
-            </div>
-        </div>
-    </div>
-</form>
 
 
     <footer>

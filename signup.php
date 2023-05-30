@@ -16,12 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
-    <title>H&k-Morocco</title>
+    <link href="css/signup.css" rel="stylesheet">
+    <title>signup</title>
+   
 </head>
-
 <body>
-    <header>
+<header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
@@ -92,59 +92,121 @@
                         <li class="nav-item">
                             <a class="nav-link" href="aboutus.php"> <b>About </b></a>
                         </li>
-                        <li class="nav-item" style="color:black">
-                            
-                <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
-            </li>   
+                          
                     </ul>
                 </div>
             </div>
         </nav>
+        <?php
+
+include 'connection.php';
+
+// Initialize variables
+$errors = [];
+
+// Register user
+if (isset($_POST['signup'])) {
+    // Receive all input values from the form
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $adresse = $_POST['adresse'];
+    $telephone = $_POST['telephone'];
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password_1 = $_POST['password_1'];
+    $password_2 = $_POST['password_2'];
+    $date_created = date("Y-m-d");
+
+    // First, check the database to make sure
+    // a user does not already exist with the same username and/or email
+    $stmt = $con->prepare("SELECT * FROM client WHERE username=? OR email=? LIMIT 1");
+    $stmt->bind_param("ss", $username, $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
+    $stmt->close();
+
+    if ($user) { // If user exists
+        if ($user['username'] === $username) {
+            echo "<script>alert('Username already exists')</script>";
+        }
+
+        if ($user['email'] === $email) {
+            echo "<script>alert('Email already exists')</script>";
+        }
+    } else {
+        
+       if ($password_1 !== $password_2) {
+            echo "<script>alert('The passwords do not match')</script>";
+        } else {
+            // Finally, register the user if there are no errors in the form
+           $hashed_password = password_hash($password_1, PASSWORD_DEFAULT);
+
+            $stmt = $con->prepare("INSERT INTO client (nom, prenom, adresse, telephone, email, username, password, date_creation) 
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssssss", $firstname, $lastname, $adresse, $telephone, $email, $username, $hashed_password, $date_created);
+            $stmt->execute();
+            $stmt->close();
+
+            session_start();
+            $_SESSION['username'] = $username;
+            
+            header('location: index.php');
+            exit();
+        }
+    }
+}
+
+?>
+
+
 
     </header>
+    <form class="form">
+    <img src="images/logo.png" alt="">
+    <p class="message">Signup now and get full access to our app. </p>
+        <div class="flex" >
+        <label>
+            <input required="" name="prenom" type="text" class="input">
+            <span>Firstname</span>
+        </label>
 
-    <div class="image-container ">
-        <img src="images/imag1.jpg" alt="fashion Image">
-        <div class="image-content ">
-            <br><br>
-            <p class="style-font">
-                <br>
-                Here you can find a variety
-                of stylish and comfortable clothing for men and women .
-                We are committed to providing high quality clothing
-                that is both fashionable and durable.
-            </p>
-            <a href="#" class="btn">Discover Now!</a>
-        </div>
-    </div>
-
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/imag2.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/imag3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/imag4.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-
-
-
-            <form action="signup.php">
-        <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div class="text-center">
-                <h1><b>Welcome to H&K</b></h1>
-                <p><b>For a new lifestyle</b></p>
-                <button class="btn" >Sign up</button>
-            </div>
-        </div>
-    </div>
+        <label>
+            <input required="" name="nom" type="text" class="input">
+            <span>Lastname</span>
+        </label>
+    </div>  
+    <label>
+            <input required="" name="adresse" type="text" class="input">
+            <span>adresse</span>
+        </label>
+        <label>
+            <input required="" name="telephone" type="text" class="input">
+            <span>telephone</span>
+        </label>
+            
+    <label>
+        <input required="" name="email" type="email" class="input">
+        <span>Email</span>
+    </label> 
+    <label>
+            <input required="" name="username" type="text" class="input">
+            <span>username</span>
+        </label>
+        
+    <label>
+        <input required="" name="password_1" type="password" class="input">
+        <span>Password</span>
+    </label>
+    <label>
+        <input required="" name="password_2" type="password" class="input">
+        <span>re-enter your Password</span>
+    </label>
+    
+    <button class="submit" name="signup">Submit</button>
+    <p class="signin">Already have an acount ? <a href="login.php">Signin</a> </p>
 </form>
-
-
+</body>
     <footer>
         <div class="container p-4 ">
             <div class="row">
@@ -172,6 +234,4 @@
             </div>
         </div>
     </footer>
-</body>
-
 </html>
