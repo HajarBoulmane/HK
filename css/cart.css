@@ -2,7 +2,7 @@ body{
     font-family: 'Darker Grotesque', sans-serif;
 }
 .navbar {
-    background-color: bisque!important;
+    background-color: rgb(206, 197, 187)!important;
     position: fixed;
     top: 0;
     width: 100%;
@@ -127,7 +127,7 @@ body{
       .btnvalider{
         display: inline-block;
         padding: 10px 13px;
-        background-color:  bisque;
+        background-color:  rgb(238, 216, 173);
         color: rgb(0, 0, 0);
         border: none;
         text-align: center;
@@ -136,13 +136,40 @@ body{
         width: 210px;
         border-radius: 40px;
         transition: background-color 0.3s ease;
-        margin-left: 1140px;
+        margin-left: 1000px;
         margin-top: 40px;
         margin-bottom: 40px;
       }
       .btnvalider:hover {
         background-color: #fdfffd;
         color: #000000;
+      }
+      .fb{
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+      }
+      .fb:hover{
+        color: rgb(24, 104, 173);
+      }
+      .gg{
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+      }
+      .gg:hover{
+        color: rgb(197, 0, 0);
+      }
+   
+      .insta{
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+      }
+      .insta:hover{
+        color: #E1306C;
+      }
+      .link{
+        text-decoration: none;
+        padding-bottom: 20px;
+        color: #ffffff;
       }
     
     

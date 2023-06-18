@@ -72,7 +72,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="aboutus.php">About</a>
                 </li>
             </ul>
         </div>
@@ -101,20 +101,20 @@
                 <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-cart-shopping"></i></a>
+                <a class="nav-link" href="cart.php"><i class="fa fa-cart-shopping"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
+                <a class="nav-link" href="account.php"><i class="fa fa-user"></i></a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class="banner">
-        <img src="images/banner3.png" alt="banner">
-    </div>
+    <img src="images/banner3.png" alt="banner">
+</div>
 
-    <div class='container products'>
+<div class='container products'>
     <div class='row'>
         <?php
     require('connection.php');
@@ -133,16 +133,7 @@
               <b><p class='card-price'>"  . $product['price'] ."DH </p></b>
               <a href='product.php?id=" . $product['id'] . "'>
               <button type='button' class='viewprod'>
-               View Product
-              <div id='container-stars'>
-              <div id='stars'></div>
-              </div>
-              <div id='glow'>
-              <div class='circle'></div>
-              </div>
-  </button>
-</a>
-
+               View Product</button></a>
             </div>
           </div>
         </div>";
@@ -157,23 +148,23 @@
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h4>Shop</h4>
                 <br>
-                <p>Women</p>
-                <p>Men</p>
-                <p>Trend</p>
+                <a href="index.php" class="link">Women</a>
+                <br>
+                <a href="indexx.php" class="link">Men</a>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h4>Help</h4>
                 <br>
-                <p>My Account</p>
-                <p>Product</p>
-                <p>Payment</p>
+                <a href="login.php" class="link">My Account</a>
+                <br>
+                <a href="payement.php" class="link">Payment</a>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h4>Contact</h4>
                 <br>
-
-                <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
-                <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
+                <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
+                <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
             </div>
         </div>
     </div>

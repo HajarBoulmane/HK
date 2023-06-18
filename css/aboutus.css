@@ -11,12 +11,20 @@ body {
   }
   
   .navbar:hover {
-    background-color: white;
+    background-color: rgb(211, 203, 203);
   }
   .navbar-nav {
-    margin-left: 120px;
+    margin-left: 100px;
     color: #000;
   }
+  .navbar-brand{
+    margin-left: 100px;
+  }
+  .nav-link{
+    margin-left: 50px;
+    font-size: 18px;
+  }
+
   footer {
     text-align: center;
     width: 100%;
@@ -24,6 +32,7 @@ body {
     flex: 0 0 calc(33.33% - 1rem);
     background-color: rgb(31, 28, 28);
     color: #fff;
+    margin-bottom: 0px;
   }
   
   .image-container img {
@@ -93,4 +102,129 @@ body {
     color:var(--font-black);
     
   }
+}
+.img-layer-logo {
+  width: 400px;
+  height: 300px;
+  margin-top: 100px;
+  margin-left: 90px;
+}
+.desc{
+  font-size: 200px;
+  text-decoration: none;
+  color: #f8f7f7;
+  font-family: 'Tajawal', sans-serif;
+}
+.img-description{
+  width: 500px;
+  height: 400px;
+  background-color: #141414;
+  margin-top: 90px;
+  margin-right: 70px;
+  padding: 80px 20px;
+}
+.img-container-banner {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.img-layer {
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+.col{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 10px;
+}
+.img-overlay-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img-button {
+  border-radius: 50px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.img-button:hover {
+  border-radius: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+}
+.banner{
+  width: 100%;
+  overflow: hidden;
+}
+
+.caption {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 105px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+  height: 250px;
+  width: 100%;
+  margin-bottom:75px;
+  margin-left:  25px;
+  margin-right:  25px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-container:hover .caption {
+  opacity: 1;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.fb{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+.fb:hover{
+  color: rgb(24, 104, 173);
+}
+.gg{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+.gg:hover{
+  color: rgb(197, 0, 0);
+}
+
+.insta{
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+.insta:hover{
+  color: #E1306C;
+}
+.link{
+  text-decoration: none;
+  padding-bottom: 20px;
+  color: #ffffff;
 }

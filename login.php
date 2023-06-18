@@ -1,178 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"
-      type="text/css">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-<link rel="stylesheet" href="css/login.css">
-<style>
-  .form {
-    display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 350px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  position: relative;
-  margin: 0 auto; /* Add this line to horizontally center the form */
-  margin-top: 100px;
-  }
-  
-  .title {
-    font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-  }
-  
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: royalblue;
-  }
-  
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: royalblue;
-  }
-  
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-  
-  .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-  
-  .signin {
-    text-align: center;
-  }
-  
-  .signin a {
-    color: royalblue;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
-  
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-  
-  .form label {
-    position: relative;
-  }
-  
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    color: green;
-  }
-  
-  .submit {
-    border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transform: .3s ease;
-  }
-  
-  .submit:hover {
-    background-color: rgb(56, 90, 194);
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/48e236d0cb.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
+        rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <title>sign-in</title>
+
+</head>
 
 
-    </style>
-    <title>Acces membre</title>
-    
+<body>
     <?php
-include ('connection.php');
+    session_start();
+    if($_SESSION['idclient']){
+        header('location:account.php');
+    }
+    ?>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/logo.png" alt="logo" width="100px" height="30px">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#"> <b>Home</b></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <b> Women </b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=coats" ?>>Coats</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=jackets" ?>>Jackets</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=dresses" ?>>Dresses</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=skirts" ?>>Skirts</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=sweaters" ?>>Sweaters</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=hoodies" ?>>Hoodies</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=accessories" ?>>Accessories</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=women&category=shoes" ?>>Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <b> Men </b>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=blazers" ?>>Blazers</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=jackets" ?>>Jackets</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=accessories" ?>>Accessories</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=pants" ?>>Pants</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=shirts" ?>>Shirts</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=sweaters" ?>>Sweaters</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=hoodies" ?>>Hoodies</a></li>
+                                <li><a class="dropdown-item"
+                                        href=<?php echo "section.php?gender=men&category=shoes" ?>>Shoes</a></li>
+                            </ul>
+                        </li>
 
-if(isset($_POST['login'])){
-    $email = $_POST['email'];  
-    $password = $_POST['password'];  
-    
-    //to prevent from mysqli injection  
-    $email = stripcslashes($email);  
-    $password = stripcslashes($password);  
-    $email = mysqli_real_escape_string($con, $email);  
-    $password = mysqli_real_escape_string($con, $password);  
-    
-    $sql = "SELECT * FROM client WHERE email = '$email' AND password = '$password'";  
-    $result = mysqli_query($con, $sql);  
-    $count = mysqli_num_rows($result);  
-    
-    if($count == 1){  
-        echo "<h1><center>Login successful</center></h1>";  
-    }  
-    else{  
-        echo "<h1>Login failed. Invalid email or password.</h1>";  
-    }     
-}
-?>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.php"> <b>About </b></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <form class="form" method="post" action="signinvalid.php">
+        <img src="images/logo.png" alt="logo" class="logo">
+        <label>
+            <input required="" placeholder="" type="email" class="input" required name="email">
+            <span>Email</span>
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="password" class="input" required name="password">
+            <span>Password</span>
+        </label>
+
+        <input class="submit" type="submit" value="Submit">
+        <p class="signin">Don't have an acount ? <a href="signup.php">Sign-up</a> </p>
+    </form>
+</body>
+<footer>
+    <div class="container p-4 ">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Shop</h4>
+                <br>
+                <a href="index.php" class="link">Women</a>
+                <br>
+                <a href="indexx.php" class="link">Men</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Help</h4>
+                <br>
+                <a href="login.php" class="link">My Account</a>
+                <br>
+                <a href="payement.php" class="link">Payment</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Contact</h4>
+                <br>
+                <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
+                <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

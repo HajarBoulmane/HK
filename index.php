@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Barlow+Condensed:wght@100&family=Italianno&family=La+Belle+Aurore&family=Libre+Franklin:wght@100&family=Monsieur+La+Doulaise&family=Moon+Dance&family=Parisienne&family=Rubik:wght@300&family=Satisfy&family=Tajawal:wght@200;300&family=Tangerine&family=Varela+Round&display=swap"
         rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
     <title>H&k-Morocco</title>
@@ -34,12 +34,12 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"> <b>Home</b></a>
+                            <a class="nav-link" aria-current="page" href="index.php"> <b>Home</b></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                               <b> Women </b>
+                                <b> Women </b>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item"
@@ -92,10 +92,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="aboutus.php"> <b>About </b></a>
                         </li>
-                        <li class="nav-item" style="color:black">
-                            
-                <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
-            </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.php"> <b>contact </b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php"> <b>Sign in </b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.php"> <b>Sign up </b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin-admin.php"><b>Admin</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.php"><i class="fa fa-user"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -114,7 +125,7 @@
                 We are committed to providing high quality clothing
                 that is both fashionable and durable.
             </p>
-            <a href="#" class="btn">Discover Now!</a>
+            <a href="signup.php" class="btn">Discover Now!</a>
         </div>
     </div>
 
@@ -133,16 +144,16 @@
 
 
 
-            <form action="signup.php">
-        <div class="container d-flex justify-content-center align-items-center vh-100">
-            <div class="text-center">
-                <h1><b>Welcome to H&K</b></h1>
-                <p><b>For a new lifestyle</b></p>
-                <button class="btn" >Sign up</button>
+        <form action="signup.php">
+            <div class="container d-flex justify-content-center align-items-center vh-100">
+                <div class="text-center">
+                    <h1><b>Welcome to H&K</b></h1>
+                    <p><b>For a new lifestyle</b></p>
+                    <button class="btn">Sign up</button>
+                </div>
             </div>
-        </div>
     </div>
-</form>
+    </form>
 
 
     <footer>
@@ -151,23 +162,25 @@
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Shop</h4>
                     <br>
-                    <p>Women</p>
-                    <p>Men</p>
-                    <p>Trend</p>
+                    <a href="index.php" class="link">Women</a>
+                    <br>
+                    <a href="indexx.php" class="link">Men</a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Help</h4>
                     <br>
-                    <p>My Account</p>
-                    <p>Product</p>
-                    <p>Payment</p>
+                    <a href="login.php" class="link">My Account</a>
+                    <br>
+                    <a href="payement.php" class="link">Payment</a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Contact</h4>
                     <br>
-                    <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
+                    <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i>
+                        H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i>
+                        H&K_Morocco@gmail.com</a>
                 </div>
             </div>
         </div>

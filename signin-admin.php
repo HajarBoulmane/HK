@@ -16,9 +16,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/signup.css" rel="stylesheet">
-    <script src="js/signup.js"></script>
-    <title>sign-up</title>
+    <link href="css/login.css" rel="stylesheet">
+    <title>sign-in</title>
 
 </head>
 
@@ -100,49 +99,19 @@
             </div>
         </nav>
     </header>
-
-    <form class="form" action="signupvalid.php" method="post" name="signup" onsubmit="return validateform()">
-        <img src="images/logo.png" alt="">
-        <div class="flex">
-            <label>
-                <input  name="prenom" type="text" class="input">
-                <span>Firstname</span>
-            </label>
-
-            <label>
-                <input name="nom" type="text" class="input">
-                <span>Lastname</span>
-            </label>
-        </div>
+    <form class="form" method="post" action="validadmin.php">
+        <img src="images/logo.png" alt="logo" class="logo">
         <label>
-            <input  name="adresse" type="text" class="input">
-            <span>adresse</span>
-        </label>
-        <label>
-            <input  name="tel" type="text" class="input">
-            <span>telephone</span>
+            <input required="" placeholder="" type="id" class="input" required name="id">
+            <span>Id</span>
         </label>
 
         <label>
-            <input  name="email" type="email" class="input">
-            <span>Email</span>
-        </label>
-        <label>
-            <input name="username" type="text" class="input">
-            <span>username</span>
-        </label>
-
-        <label>
-            <input  name="password1" type="password" class="input">
+            <input required="" placeholder="" type="password" class="input" required name="password">
             <span>Password</span>
         </label>
-        <label>
-            <input  name="password2" type="password" class="input">
-            <span>re-enter your Password</span>
-        </label>
 
-        <input class="submit" name="signup" type="submit" value="Submit">
-        <p class="signin">Already have an acount ? <a href="login.php">Signin</a> </p>
+        <input class="submit" type="submit" value="Submit">
     </form>
 </body>
 <footer>

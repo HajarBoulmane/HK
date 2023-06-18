@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Barlow+Condensed:wght@100&family=Italianno&family=La+Belle+Aurore&family=Libre+Franklin:wght@100&family=Monsieur+La+Doulaise&family=Moon+Dance&family=Parisienne&family=Rubik:wght@300&family=Satisfy&family=Tajawal:wght@200;300&family=Tangerine&display=swap"
         rel="stylesheet">
     <link href="css/aboutus.css" rel="stylesheet">
     <title>H&k-Morocco</title>
@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
                     <img src="images/logo.png" alt="logo" width="100px" height="30px">
@@ -34,12 +34,12 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#"> <b>Home</b></a>
+                            <a class="nav-link text-white" aria-current="page" href="#"> <b>Home</b></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                               <b> Women </b>
+                                <b> Women </b>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item"
@@ -63,7 +63,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <b> Men </b>
                             </a>
@@ -89,100 +89,94 @@
                         </li>
 
                         </li>
-                        
+
                         <li class="nav-item">
-                            
-                <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
-            </li>   
+
+                            <a class="nav-link text-white" href="login.php"><i class="fa fa-user"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
     </header>
-
-    <div class="image-container ">
-        <img src="images/imag1.jpg" alt="fashion Image">
-        <div class="image-content ">
-            <br>
-            <br>
-            <p class="style-font">
-            </p>
-            
+    <div class="banner">
+        <div class="img-container-banner">
+            <img src="images/hklogo.png" alt="banner" class="banner">
+            <div class="img-overlay-banner">
+                <a href="index.php" class="desc">H&K</a>
+            </div>
         </div>
     </div>
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-
-                <img src="images/imag2.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-            <div class="paragraph">
-                <p>H&K is a popular e-commerce site catering to fashion-conscious people looking for stylish clothing and accessories.
-                     H&K offers a wide range of trendy and high-quality products,
-                      providing fashion lovers with an unparalleled shopping experience.</p>
+    <div class="row">
+        <div class="col">
+            <div class="img-container-banner">
+                <img src="images/logo.png" alt="My Image" class="img-layer-logo">
             </div>
         </div>
-            </div>
+        <div class="col">
+            <div class="img-description">
+                <h1 class="text-white text-center">H&K</h1>
+                <p class="text-white text-wrap text-center">HK Clothing est une marque de vêtements en ligne qui allie style, qualité et tendances actuelles. Nous sommes fiers de vous offrir une expérience de shopping en ligne exceptionnelle, où vous pourrez découvrir et acheter des vêtements de qualité supérieure, conçus pour répondre aux besoins des amateurs de mode les plus exigeants.
 
-            <div class="carousel-item">
-                <img src="images/imag3.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block " style="color:black" font-size="20px" >
-                <div class="paragraph2">
-                    <p>At H&K, customers can browse a diverse collection of apparel including tops, bottoms, dresses, outerwear and more.
-                     The site showcases the latest fashion trends so customers can stay ahead of the curve when it comes to style. 
-                     From casual wear to formal wear,
-                     H&K is your one stop shop for all your fashion needs, with items for every occasion.</p>
-                    </div>
-            </div>
-            <div class="carousel-item">
-                <img src="images/imag4.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block " style="color:black" font-size="20px" >
-                <div class="paragraph3">
-                    <p>H&K places a strong emphasis on customer satisfaction and aims to provide exceptional service
-                    . They offer various convenient features, such as secure online payments,
-                     flexible return policies, and efficient shipping options,
-                      ensuring a seamless and enjoyable shopping experience. 
-                      Additionally, H&K provides personalized recommendations based on customers' preferences
-                       and browsing history, making it easier for them to discover 
-                       new and exciting fashion choices.</p>
-            </div>
-
+</p>
+                <p class="text-white text-wrap text-center">© 2018 DAILYBLOG</p>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="image-container">
+                <img src="images/banner1.png" alt="My Image" class="img-layer">
+                <div class="caption">Fashion</div>
+            </div>
         </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="images/banner2.png" alt="My Image" class="img-layer">
+                <div class="caption">Culture</div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="image-container">
+                <img src="images/banner4.png" alt="My Image" class="img-layer">
+                <div class="caption">Comfortable</div>
+            </div>
+        </div>
+    </div>
+
 
 
 
 
     <footer>
-        <div class="container p-4 ">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h4>Shop</h4>
-                    <br>
-                    <p>Women</p>
-                    <p>Men</p>
-                    <p>Trend</p>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h4>Help</h4>
-                    <br>
-                    <p>My Account</p>
-                    <p>Product</p>
-                    <p>Payment</p>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h4>Contact</h4>
-                    <br>
-                    <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
-                </div>
+    <div class="container p-4 ">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Shop</h4>
+                <br>
+                <a href="index.php" class="link">Women</a>
+                <br>
+                <a href="indexx.php" class="link">Men</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Help</h4>
+                <br>
+                <a href="login.php" class="link">My Account</a>
+                <br>
+                <a href="payement.php"class="link">Payment</a>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h4>Contact</h4>
+                <br>
+                <a href="#"class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                <a href="#"class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
+                <a href="#"class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 
 </html>

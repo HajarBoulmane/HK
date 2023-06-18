@@ -83,4 +83,35 @@ body {
     margin-top: 0;
   }
    
+  .fb{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+  }
+  .fb:hover{
+    color: rgb(24, 104, 173);
+  }
+  .gg{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+  }
+  .gg:hover{
+    color: rgb(197, 0, 0);
+  }
+
+  .insta{
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+  }
+  .insta:hover{
+    color: #E1306C;
+  }
+  .link{
+    text-decoration: none;
+    padding-bottom: 20px;
+    color: #ffffff;
+  }
+  .font-style{
+    font-family: 'Varela Round', sans-serif;
+
+  }
   

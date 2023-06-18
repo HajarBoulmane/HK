@@ -17,6 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
     <link href="css/singlepro.css" rel="stylesheet">
+    <script src="js/cart.js"></script>
     <title>H&k-Morocco</title>
 </head>
 
@@ -25,97 +26,103 @@
         session_start();
         ?>
 
-<div class="offcanvas offcanvas-start" id="demo">
-    <div class="offcanvas-header">
-        <h1 class="offcanvas-title">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/logo.png" alt="logo" width="100px" height="30px">
-            </a>
-        </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    <div class="offcanvas offcanvas-start" id="demo">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/logo.png" alt="logo" width="100px" height="30px">
+                </a>
+            </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container mt-3 canvalist">
+                <ul class="list-unstyled">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdowan" aria-expanded="false">
+                            Women
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=coats">Coats</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=jackets">Jackets</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=dresses">Dresses</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=skirts">Skirts</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=sweaters">Sweaters</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=hoodies">Hoodies</a>
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="section.php?gender=women&category=accessories">Accessories</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=women&category=shoes">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Men
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=blazers">Blazers</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=jackets">Jackets</a></li>
+                            <li><a class="dropdown-item"
+                                    href="section.php?gender=men&category=accessories">Accessories</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=pants">Pants</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=shirts">Shirts</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=sweaters">Sweaters</a>
+                            </li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=hoodies">Hoodies</a></li>
+                            <li><a class="dropdown-item" href="section.php?gender=men&category=shoes">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="aboutus.php">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="offcanvas-body">
-        <div class="container mt-3 canvalist">
-            <ul class="list-unstyled">
+
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid ">
+            <ul class="navbar-nav">
+                <div class="menu">
+                    <li class="nav-item ">
+                        <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                            <i class="fas fa-bars"></i>
+                            Menu
+                        </button>
+                    </li>
+                </div>
+                <div class="logo">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php">
+                            <img src="images/logo.png" alt="logo" width="100px" height="30px">
+                        </a>
+                    </li>
+                </div>
                 <li class="nav-item">
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Women
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=coats">Coats</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=jackets">Jackets</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=dresses">Dresses</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=skirts">Skirts</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=sweaters">Sweaters</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=hoodies">Hoodies</a></li>
-                        <li><a class="dropdown-item"
-                                href="section.php?gender=women&category=accessories">Accessories</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=women&category=shoes">Shoes</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Men
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=blazers">Blazers</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=jackets">Jackets</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=accessories">Accessories</a>
-                        </li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=pants">Pants</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=shirts">Shirts</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=sweaters">Sweaters</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=hoodies">Hoodies</a></li>
-                        <li><a class="dropdown-item" href="section.php?gender=men&category=shoes">Shoes</a></li>
-                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.php"><i class="fa fa-cart-shopping"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
                 </li>
             </ul>
         </div>
-    </div>
-</div>
+    </nav>
 
-<nav class="navbar navbar-expand-sm">
-    <div class="container-fluid ">
-        <ul class="navbar-nav">
-            <div class="menu">
-                <li class="nav-item ">
-                    <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                        <i class="fas fa-bars"></i>
-                        Menu
-                    </button>
-                </li>
-            </div>
-            <div class="logo">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.php">
-                        <img src="images/logo.png" alt="logo" width="100px" height="30px">
-                    </a>
-                </li>
-            </div>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="cart.php"><i class="fa fa-cart-shopping"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa fa-user"></i></a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="banner">
+    <div class="banner">
         <img src="images/banner3.png" alt="banner">
-    </div> 
+    </div>
     <?php
     
   require('connection.php');
@@ -125,7 +132,7 @@
   $res=$con->query($req);
   $product=$res->fetch_assoc();
 ?>
-    <form action="cart.php" method="post">
+    <form action="cartadd.php" method="post" onsubmit="return validateform()" name="product">
         <div class="wrapper">
             <div class="image-section w-100">
                 <img src="<?php echo $product['image']; ?>" height="420" width="450">
@@ -139,8 +146,8 @@
                     <div class="price">
                         <p>Price: <?php echo $product['price']; ?> DH</p>
                     </div>
-                    <select name="size" class="size" class="input" >
-                    <option selected disabled>Choose size</option>
+                    <select name="size" class="size input">
+                        <option selected disabled value="">Choose size</option>
                         <option value="s">S</option>
                         <option value="xs">XS</option>
                         <option value="xl">XL</option>
@@ -149,36 +156,36 @@
                     <label>Choose Quantity:</label>
                     <input type="text" name="quantite" class="input">
                     </br>
-                    <input type="submit"  class="cart "value="Place in cart" >
-                    
+                    <input type="submit" class="cart " value="Place in cart">
+                </div>
+            </div>
+        </div>
     </form>
-    </div>
-    </div>
-    </div>
-
     <footer>
         <div class="container p-4 ">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Shop</h4>
                     <br>
-                    <p>Women</p>
-                    <p>Men</p>
-                    <p>Trend</p>
+                    <a href="index.php" class="link">Women</a>
+                    <br>
+                    <a href="indexx.php" class="link">Men</a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Help</h4>
                     <br>
-                    <p>My Account</p>
-                    <p>Product</p>
-                    <p>Payment</p>
+                    <a href="login.php" class="link">My Account</a>
+                    <br>
+                    <a href="payement.php" class="link">Payment</a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h4>Contact</h4>
                     <br>
-                    <p><i class="fa-brands fa-facebook-f footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-brands fa-instagram footer-link"></i> H&K_clothing</p>
-                    <p><i class="fa-solid fa-envelope footer-link"></i> H&K_Morocco@gmail.com</p>
+                    <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i>
+                        H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i>
+                        H&K_Morocco@gmail.com</a>
                 </div>
             </div>
         </div>

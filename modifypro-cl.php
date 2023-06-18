@@ -1,13 +1,3 @@
-<?php 
-        session_start();
-        if(!$_SESSION['idcart']){
-            header('location:index.php');
-        }
-        else{
-            $idcart=$_SESSION['idcart'];
-        }
-        ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +16,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/cart.css" rel="stylesheet">
+    <link href="css/singlepro.css" rel="stylesheet">
+    <script src="js/cart.js"></script>
     <title>H&k-Morocco</title>
 </head>
 
 <body>
+    <?php 
+        session_start();
+        ?>
 
     <div class="offcanvas offcanvas-start" id="demo">
         <div class="offcanvas-header">
@@ -49,7 +43,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdowan" aria-expanded="false">
                             Women
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -125,69 +119,78 @@
             </ul>
         </div>
     </nav>
+
     <?php
-require('connection.php');
-
-$req1 = "SELECT * FROM panier WHERE id=$idcart";
-$res1 = $con->query($req1);
-
-echo "<div class='cart-container'>";
-
-while ($row1 = $res1->fetch_assoc()) {
-    $idproduit = $row1['id_produit'];
-    $req2 = "SELECT * FROM produit WHERE id = $idproduit";
-    $res2 = $con->query($req2);
-
-    while ($row2 = $res2->fetch_assoc()) {
-        echo "
-        <div class='cart-item'>
-          <div class='card'>
-            <img class='card-img-top' src='" . $row2['image'] . "' alt='" . $row2['description'] . "'>
-            <div class='card-body'>
-              <h5 class='card-title'>" . $row2['description'] . "</h5>
-              <p class='card-text'>" . $row2['category'] . "</p>
-              <p class='card-price'>" . $row2['price'] . "DH</p>
-              <a href='product.php?id=" . $row2['id'] . "'>
-                <button type='button' class='button'>
-                  <strong>View Product</strong>
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>";
-    }
-}
-echo"</div>";
+    
+  require('connection.php');
+  $idproduit=$_GET['idproduit'];
+  $idpanier=$_GET['idpanier'];
+  $_SESSION['idproduit']=$idproduit;
+  $_SESSION['idpanier']=$idpanier;
+  $req="select * from produit where id=$idproduit";
+  $res=$con->query($req);
+  $product=$res->fetch_assoc();
 ?>
-    <a href="valider.php"><button class="btnvalider">valider</button></a>
-
-    <footer>
-    <div class="container p-4 ">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h4>Shop</h4>
-                <br>
-                <a href="index.php" class="link">Women</a>
-                <br>
-                <a href="indexx.php" class="link">Men</a>
+    <form action="modification.php" method="post" onsubmit="return validateform()" name="product">
+        <div class="wrapper">
+            <div class="image-section w-100">
+                <img src="<?php echo $product['image']; ?>" height="420" width="450">
             </div>
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h4>Help</h4>
-                <br>
-                <a href="login.php" class="link">My Account</a>
-                <br>
-                <a href="payement.php"class="link">Payment</a>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                <h4>Contact</h4>
-                <br>
-                <a href="#"class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
-                <a href="#"class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
-                <a href="#"class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
+            <div class="card-section ">
+                <div class="card">
+                    <div class="description">
+                        <h3 class="text-center text-uppercase"><?php echo $product['description']; ?></h3></br>
+                        <p><?php echo $product['desc_detailed']; ?></p>
+                    </div>
+                    <div class="price">
+                        <p>Price: <?php echo $product['price']; ?> DH</p>
+                    </div>
+                    <select name="size" class="size" class="input">
+                        <option selected disabled>Choose size</option>
+                        <option value="s">S</option>
+                        <option value="xs">XS</option>
+                        <option value="xl">XL</option>
+                        <option value="l">L</option>
+                    </select></br>
+                    <label>Choose Quantity:</label>
+                    <input type="text" name="quantite" class="input" required>
+                    </br>
+                    <input type="submit" class="cart " value="Place in cart">
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </form>
+
+
+    <footer>
+        <div class="container p-4 ">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Shop</h4>
+                    <br>
+                    <a href="index.php" class="link">Women</a>
+                    <br>
+                    <a href="indexx.php" class="link">Men</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Help</h4>
+                    <br>
+                    <a href="login.php" class="link">My Account</a>
+                    <br>
+                    <a href="payement.php" class="link">Payment</a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h4>Contact</h4>
+                    <br>
+                    <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i>
+                        H&K_clothing</a><br>
+                    <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i>
+                        H&K_Morocco@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -16,10 +16,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Julius+Sans+One&family=Lustria&family=Sofia+Sans+Condensed:wght@1&display=swap"
         rel="stylesheet">
-    <link href="css/signup.css" rel="stylesheet">
-    <script src="js/signup.js"></script>
-    <title>sign-up</title>
-
+    <link href="css/contact.css" rel="stylesheet">
+    <title>H&k-Morocco</title>
 </head>
 
 <body>
@@ -94,58 +92,50 @@
                         <li class="nav-item">
                             <a class="nav-link" href="aboutus.php"> <b>About </b></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php"> <b>Sign in </b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.php"> <b>Sign up </b></a>
+                        </li>
+                        <li class="nav-item" style="color:black">
 
+                            <a class="nav-link" href="login.php"><i class="fa fa-user"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
 
-    <form class="form" action="signupvalid.php" method="post" name="signup" onsubmit="return validateform()">
-        <img src="images/logo.png" alt="">
+    <form class="form" action="commentaire.php" method="post">
+        <p class="head text-center">Contact Us</p>
         <div class="flex">
             <label>
-                <input  name="prenom" type="text" class="input">
+                <input required="" name="firstname" type="text" class="input">
                 <span>Firstname</span>
             </label>
 
             <label>
-                <input name="nom" type="text" class="input">
+                <input required="" name="lastname" type="text" class="input">
                 <span>Lastname</span>
             </label>
         </div>
         <label>
-            <input  name="adresse" type="text" class="input">
-            <span>adresse</span>
-        </label>
-        <label>
-            <input  name="tel" type="text" class="input">
-            <span>telephone</span>
-        </label>
-
-        <label>
-            <input  name="email" type="email" class="input">
+            <input required="" name="email" type="email" class="input">
             <span>Email</span>
         </label>
         <label>
-            <input name="username" type="text" class="input">
-            <span>username</span>
+            <textarea required="" name="commentaire" type="text" class="textarea" placeholder="Leave a comment"></textarea>
         </label>
 
-        <label>
-            <input  name="password1" type="password" class="input">
-            <span>Password</span>
-        </label>
-        <label>
-            <input  name="password2" type="password" class="input">
-            <span>re-enter your Password</span>
-        </label>
 
         <input class="submit" name="signup" type="submit" value="Submit">
-        <p class="signin">Already have an acount ? <a href="login.php">Signin</a> </p>
     </form>
-</body>
-<footer>
+
+
+    <footer>
     <div class="container p-4 ">
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
@@ -160,17 +150,18 @@
                 <br>
                 <a href="login.php" class="link">My Account</a>
                 <br>
-                <a href="payement.php" class="link">Payment</a>
+                <a href="payement.php"class="link">Payment</a>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                 <h4>Contact</h4>
                 <br>
-                <a href="#" class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
-                <a href="#" class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
-                <a href="#" class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
+                <a href="#"class="link"><i class="fa-brands fa-facebook-f footer-link fb"></i> H&K_clothing</a><br>
+                <a href="#"class="link"><i class="fa-brands fa-instagram footer-link insta"></i> H&K_clothing</a><br>
+                <a href="#"class="link"><i class="fa-solid fa-envelope footer-link gg"></i> H&K_Morocco@gmail.com</a>
             </div>
         </div>
     </div>
 </footer>
+</body>
 
 </html>

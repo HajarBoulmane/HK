@@ -20,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Italianno&family=La+Belle+Aurore&family=Libre+Franklin:wght@100&family=Monsieur+La+Doulaise&family=Moon+Dance&family=Parisienne&family=Tajawal:wght@200&family=Tangerine&display=swap"
         rel="stylesheet">
-    <link href="css/admin.css " rel="stylesheet">
+    <link href="css/feed.css " rel="stylesheet">
     <title>DAILYBLOG</title>
 </head>
 
@@ -42,28 +42,28 @@ header('location:index.php');
                                 <a href="account.php" class="logo text-white text-center">Admin Panel</a>
                             </li>
                             <li class="nav-item sideitem">
-                                <a class="nav-link text-dark  text-center tool " href="addpro-admin.php">
-                                    <i class="fa-solid fa-house icon"></i></i><b>Add Product</b></a>
+                                <a class="nav-link text-dark  text-center tool " href="admin.php">
+                                <i class="fa-solid fa-house icon"></i></i><b>Home</b></a>
+                            </li>
+                            <li class="nav-item sideitem">
+                                <a class="nav-link text-dark  text-center tool " href="admin.php">
+                                <i class="fa fa-bag-shopping icon"></i><b>list of Commands</b></a>
                             </li>
                             <li class="nav-item sideitem">
                                 <a class="nav-link text-dark  text-center tool " href="feedback.php">
-                                    <i class="fa-sharp fa-regular fa-comments icon"></i><b>Client's Feedback</b></a>
+                                <i class="fa-sharp fa-regular fa-comments icon"></i><b>Client's Feedback</b></a>
                             </li>
                             <li class="nav-item sideitem">
                                 <a class="nav-link text-dark  text-center tool " href="product-list.php">
-                                    <i class="fa fa-light fa-cart-shopping icon"></i><b>List of Products</b></a>
-                            </li>
-                            <li class="nav-item sideitem">
-                                <a class="nav-link text-dark  text-center tool " href="product-list.php">
-                                    <i class="fa fa-light fa-cart-shopping icon"></i><b>List of Products</b></a>
+                                <i class="fa fa-light fa-cart-shopping icon"></i><b>List of Products</b></a>
                             </li>
                             <li class="nav-item sideitem">
                                 <a class="nav-link text-dark  text-center tool " href="users-list.php">
-                                    <i class="fa fa-circle-user icon"></i><b>List of Users</b></a>
+                                <i class="fa fa-circle-user icon"></i><b>List of Users</b></a>
                             </li>
                             <li class="nav-item sideitem">
                                 <a class="nav-link text-dark  text-center tool " href="logout.php">
-                                    <b>Log Out</b></a>
+                               <b>Log Out</b></a>
                             </li>
                         </ul>
                     </div>
@@ -71,46 +71,39 @@ header('location:index.php');
 
             </div>
             <div class="col-lg-9 main">
-                <div class="product">
-                    <h1 class="text-center" style="margin-bottom:30px;margin-right:140px;">List of commands</h1>
+                <div class="blogs">
+                    <h1 class="text-center" style="margin-bottom:30px;">Feedbacks</h1>
                     <table>
                         <thead>
                             <tr>
-                                <th>Produit</th>
-                                <th>Commande</th>
-                                <th>Idpanier</th>
-                                <th>Quantite</th>
-                                <th>size</th>
+                                <th>Id</th>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Comment</th>
+                                <th>Date</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
+                        <?php
                 require('connection.php');
-                        $req1 = "SELECT * FROM commande";
-                        $res1 = $con->query($req1);
-                        if($row1= $res1->fetch_assoc()){
-                        $idpanier=$row1['idpanier'];
-                        $idcommande=$row1['numcmd'];
-                        $req2 = "SELECT * FROM panier where id=$idpanier";
-                        $res2= $con->query($req2);
-                        while ($row2= $res2->fetch_assoc()) {
-                        $quantite = $row2['quantite'];
-                        $size = $row2['size'];
-                        $idproduit = $row2['id_produit'];
-                        $req3="select * from produit where id=$idproduit";
-                        $res3=$con->query($req3);
-                        $row3=$res3->fetch_assoc();
-                        $image=$row3['image'];
+                        $req = "SELECT * FROM commentaire";
+                        $res = $con->query($req);
+                        while ($row= $res->fetch_assoc()) {
+                        $id = $row['id'];
+                        $user = $row['user'];
+                        $email = $row['email'];
+                        $comment= $row['comment'];
+                        $date = $row['date'];
                         echo '<tr>
-                            <td class="title"><img src='.$image.' class="imgproduct"></td>
-                            <td class="text-center">'.$idcommande.'</td>
-                            <td class="text-center">'.$idpanier.'</td>
-                            <td class="text-center">'.$quantite.'</td>
-                            <td class="theme text-center">'.$size.'</td>
-                            <td><a href="delcmd-admin.php?idproduit='.$idproduit.'&idpanier='.$idpanier.'"><button class="btndelete">Delete</button></a></td>
+                            <td class="text-center">'.$id.'</td>
+                            <td class="text-center">'.$user.'</td>
+                            <td class="text-center">'.$email.'</td>
+                            <td class="text-center">'.$comment.'</td>
+                            <td class="text-center">'.$date.'</td>
+                            <td><a href="delcomment.php?idcomment='.$id.'"><button class="btndelete">Delete</button></a></td>
                         </tr>';
-                        }}
+                        }
                 ?>
                         </tbody>
                     </table>
