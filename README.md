@@ -34,8 +34,8 @@ To run this project locally, you will need a local server environment like **XAM
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/HajarBoulmane/your-repo-name.git](https://github.com/HajarBoulmane/HK.git)
-    ```
+    git clone [https://github.com/HajarBoulmane/HK.git]
+     ```
 2.  **Move to Web Directory:**
     Place the project folder inside your server's root directory (e.g., `C:/xampp/htdocs/`).
 3.  **Database Setup:**
